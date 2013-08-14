@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>   <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->	<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<title>Grid framework | Modular Markup Guide</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr-2.0.6.js"></script>
+
+	<!-- MH CUSTOM WEBSITE -->
+</head>
+<body data-spy="scroll">
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    <a href="index.html" class="brand">Modular Markup Guide</a>
+    <ul class="nav">
+      <li><a href="how-to-use.html">Getting Started</a></li>
+      <li><a href="the-grid.html">Grid Framework</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="php.html">PHP</a></li>
+      <li><a href="zoning.html">Zones</a></li>
+      <li><a href="ebb-and-flow.html">Ebb and Flow</a></li>
+    </ul>
+    </div><!-- END .container -->
+  </div><!-- END .navbar-inner -->
+</nav><!-- END .navbar .navbar-fixed-top -->
+<header>
+	<hgroup class="container-12">
+		<div class="jumbotron subhead">
+			<h1>Grid framework overview</h1>
+			<p class="lead">The scaffolding behind all the magic of Disneyworld <span class="label label-important">Final Review</span></p>
+			<div class="subnav">
+			<ul class="nav nav-pills">
+        <li><a href="#the-grid">The Grid</a></li>
+				<li><a href="#containers">Containers</a></li>
+				<li><a href="#code-example">Code Example</a></li>
+				<li><a href="#code-commenting">Code Commenting</a></li>
+				<li><a href="#push-pull">Push &amp; Pull</a></li>
+				<li><a href="#prefix-suffix"> Prefix &amp; Suffix</a></li>
+				<li><a href="#alpha-omega">Alpha &amp; Omega</a></li>
+			</ul>
+			</div><!-- END .subnav -->
+		</div>
+	</hgroup><!-- END .container-12 -->
+</header>
+<section>
+	<div class="container-12">
+		<article class="grid-12">
+		
+		<!-- Start #the-grid -->
+		
+      <section id="the-grid" class="clearfix">
+        <div class="page-header">
+  			  <h1>The Grid <small>Not intentionally a Tron reference</small></h1>
+			  </div><!-- END .page-header -->
+			  <div class="grid-3 alpha">
+			    <h3>Essence</h3>
+			    <p>The 960 Grid System is an effort to streamline web development workflow by providing commonly used dimensions, based on a width of 960 pixels. There are two variants: 12 and 16 columns, which can be used separately or in tandem. <a href="http://sonspring.com/journal/960-grid-system" target="_blank">Read more</a>.</p>
+			  </div><!-- END .grid-4 alpha -->
+			  <div class="grid-3">
+			    <h3>Dimension</h3>
+			    <p>The 12-column grid is divided into portions that are 60 pixels wide. The 16-column grid consists of 40 pixel increments. Each column has 10 pixels of margin on the left and right, which create 20 pixel wide gutters between columns. <a href="how-to-use-example.html">See this in action</a>.</p>
+			  </div><!-- END .grid-3 -->
+			  <div class="grid-6 omega">
+			    <h3>Source Order</h3>
+			    <p>By utilizing the push-XX and pull-XX classes, elements can be rearranged, independent of the order in which they appear in the markup. This allows you to keep more pertinent info higher in the HTML, without sacrificing precision in your page layout. For instance, <a href="http://www.cardlawfirm.com/" target="_blank">view the source code of this site</a> to see how the <code>#content</code> area has been re-positioned.</p>
+			    <div class="alert alert-info"><a href="#" class="close" data-dismiss="alert">&times;</a> The SEO team will appreciate that we place content before the sidebar in HTML even if if the site was designed differently.</div>
+			  </div><!-- END .grid-5 .omega -->
+			  <div class="grid-12 alpha omega">
+			  <img src="img/16-12-visual.png" alt="Visual for the 12/16 grid framework" />
+			  </div><!-- END .grid-12 .alpha .omega -->
+			</section><!-- END #the-grid .clearfix -->
+
+		<!-- Start #containers -->
+		  			
+      <section id="containers" class="clearfix">
+        <div class="page-header">
+          <h1>Containers <small>Two containers, one great taste</small></h1>
+        </div>
+        <div class="grid-2 alpha">
+          <h3>HTML</h3>
+          <p>We use two grid variants, 12 and 16. To initiate one of the other is to start with a container. A container consists of HTML with a class that contains CSS properties that will create a block element, 960px wide.</p>
+        </div><!-- END .grid-2 .alpha -->
+        <div class="grid-4">
+          <pre class="prettyprint linenums">
+&lt;div class="container-12">
+&hellip;
+&lt;/div></pre>
+      <p>and:</p>
+      <pre class="prettyprint linenums">
+&lt;div class="container-16">
+&hellip;
+&lt;/div></pre>
+        </div><!-- END .grid-4 -->
+        <div class="grid-3">
+          <h3>CSS</h3>
+          <p>The CSS for this is simple, margin's for the left and right are set to auto which with center a 960px block level element. Position is set to relative in order to allow for absolutely positioned elements within a particular zone.</p>
+        </div><!-- END .grid-3 -->
+        <div class="grid-3 omega">
+          <pre class="prettyprint linenums">
+.container-12,
+.container-16 { 
+position:relative; 
+margin:0px auto; 
+width:960px; 
+overflow:hidden;
+text-align:left;
+}
+</pre>
+        </div><!-- END .grid-3 .omega -->
+      </section><!-- END #containers .clearfix-->
+      
+		<!-- Start #code-example -->
+		
+      <section id="code-example" class="clearfix">
+        <div class="page-header">
+          <h1>Code Example<small> More on push, pull, prefix and suffix later</small></h1>
+        </div><!-- END .page-header -->
+        <div class="grid-7 alpha">
+          <h3>Some HTML code snippets to put this all together</h3>
+          <p><em>View comprehensive code on the <a href="how-to-use-example.html">demo page</a>.</em></p>        
+          <p>To the right is an example of how the code works. The container specifies how many total columns exist, either 12 or 16. For the most part, you will only ever need to specify a class name of <code>.grid-XX</code>, where XX represents the column width.</p>
+          <p>If a grid unit contains grid children, the first child in a row will need a class of alpha and the last child in a row requires the class name omega. Likewise, if you want to insert empty space before or after a grid unit, use class <code>.prefix-XX</code> or <code>.suffix-XX</code>.</p>
+          <h3>Nine-Sixty</h3>
+          <p>All modern monitors support at least 1024 &times; 768 pixel resolution. 960 is divisible by 2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 20, 24, 30, 32, 40, 48, 60, 64, 80, 96, 120, 160, 192, 240, 320 and 480. This makes it a highly flexible base number to work with.</p>
+        </div><!-- END .grid-7 alpha -->
+        <div class="grid-5 omega">
+          <pre class="prettyprint linenums">
+&lt;div class="container-12">
+&lt;div class="grid-7 prefix-1">
+  &lt;div class="grid-2 alpha">
+&hellip;
+  &lt;/div>
+  &lt;div class="grid-3">
+&hellip;
+  &lt;/div>
+  &lt;div class="grid-2 omega">
+&hellip;
+  &lt;/div>
+&lt;/div>
+&lt;div class="grid-3 suffix-1">
+    &hellip;
+&lt;/div>
+&lt;/div>
+</pre>
+        </div><!-- END .grid-5 .omega -->
+      </section><!-- END #conatiners .clearfix-->
+
+		<!-- Start #code-commenting -->
+		            
+      <section id="code-commenting" class="clearfix">
+        <div class="page-header">
+          <h1>Code Commenting <small>Be kind, rewind</small></h1>
+        </div><!-- END .page-header -->
+        <div class="grid-6 alpha">
+          <h2>HTML Commenting Standards</h2>
+          <p>When there is a mess of HTML code and a ton of closing tags, sometimes it is not easy to figure out which closing <code>&lt;div></code> is the one we're looking for. Some say that commenting opening and closing HTML tags is necessary to help developers code read clearer. Although we agree with the sentiment, this is a bit much. We want the support team to easily traverse our code, and not just them, anybody who needs to edit code should be left well written, semantic, code.</p>
+          <p>We comment ending blocks where ever a class or ID tag was used. The syntax is simple, directly after the closing tag, start an HTML comment tag then add END and the classes or IDs in order in which they appear logically using periods for classes (.) and number sign for ID's (#) with spaces between each.</p>
+          <h3>Example markup</h3>
+          <p>Here is some code one might see for a Content &amp; Sidebar zone&hellip;</p>
+          <pre class="prettyprint linenums">
+&lt;section id="content-area" class="container-12">
+&lt;article class="grid-8 content">
+  &hellip;
+&lt;/article>&lt;!-- END .grid-8 .content -->
+&lt;section class="grid-4 sidebar">
+  &hellip;
+&lt;/section>&lt;!-- END .grid-4 .sidebar -->
+&lt;/section>&lt;!-- #content-area .container-12 -->
+</pre>
+      </div><!-- END .grid-6 .alpha -->
+      <div class="grid-6 omega">
+        <h2>CSS Commenting Standards</h2>
+        <p>Similarly we want to make our CSS comfortable to traverse for anybody besides ourselves who will be coming back to make edits. Remember this is more if a 'when' not 'if', people change their websites frequently and these need to be a flexible, and future proof as possible. The standard comment block has a line break before and after a line of comment. Also if there is something that may confuse another developer, write a comment, after the CSS attribute and value.</p>
+        <div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert">&times;</a>Start and end your comment with three dashes <code>/* --- --- */</code></div>
+        <div class="alert alert-success"><a href="#" class="close" data-dismiss="alert">&times;</a>Think about what the presentational item does, how it works, and describe that as best you can in a comment.</div>
+        <pre class="prettyprint linenums">
+/* --- Navigation --- */
+
+.nav-inner {
+background-color: #2c2c2c; /* Required for effect */
+}
+
+/* --- Content --- */
+
+article .page-header {
+padding-top:80px;
+}
+</pre>
+        </div><!-- END .grid-6 .omega -->
+      </section><!-- END #code-commenting .clearfix -->
+
+		<!-- Start #push-pull -->
+
+      <section id="push-pull" class="clearfix">
+        <div class="page-header">
+          <h1>Push &amp; Pull <small>No physical contact required</small></h1>
+        </div><!-- END .page-header -->
+        <div class="grid-12 alpha omega">
+          <h2>Source Order</h2>
+          <p>Sometimes the order in which we write our HTML is out of place with where something should presentationally display. We can rearrange the order of items in our document with a few classes. Some examples of this would be if a company logo is, presentationally, after less important information in the header. The <a href="http://960.gs">960.gs shows this well</a>. If we view source on their landing page one will see the logo before the first content box about downloading, but the logo is pushed four columns to the right and the download box is pulled four columns to the left. Their code is slightly different than ours, we use dashes '-' not underscores '_' but it accomplishes the same effect. </p>
+          <p>Another example is the <a href="http://cardlawfirm.com" target="_blank">Card Law Firm</a>. The layout for this site has the sidebar before the content. Well it's obvious we all want to get to the content before the sidebar, so we use the push and pull CSS tags to push the content (first in the HTML document) to the right, or past the columns required for the sidebar; and then pull, to the left, the sidebar (second in the HTML document) back past the content columns.</p>
+        </div><!-- END .grid-12 .alpha .omega -->
+        <div class="grid-6 alpha">
+          <h2>Pull</h2>
+          <p>Pull code is the opposite of the push and starts similarly with <code>pull-</code> followed by the number of columns to the left one is pulling ones content. Back to the <a href="http://cardlawfirm.com" target="_blank">Card Law Firm</a>, if we view source the sidebar, which comes after the content in the HTML is, being pulled twleve columns to the left to using CSS to move that sidebar before the content.</p>
+          <h3>Example Code</h3>
+          <pre class="prettyprint linenums">
+&lt;div class="grid-4 pull-12">
+&lt;section id="sidebar">
+  &hellip;
+&lt;/section>&lt;!-- END #sidebar -->
+&lt;/div>&lt;!-- END .grid-4 .pull-12 -->
+</pre>
+        </div><!-- END .grid-6 .alpha -->
+        <div class="grid-5 omega">
+          <h2>Push</h2>
+          <p>The push code is straight forward, it starts with <code>.push-</code> followed by the number of columns to the right one is pushing ones content. Using <a href="http://cardlawfirm.com" target="_blank">Card Law Firm</a> as an example, if we view the source of this site we see the content comes first in the HTML, and is being pushed four columns to the right.</p>
+          <h3>Example Code</h3>
+          <pre class="prettyprint linenums">
+&lt;div class="grid-12 push-4">
+&lt;header class="clearfix">
+ &hellip;
+&lt;/header>&lt;!-- END .clearfix -->
+&lt;/div>&lt;!-- END .grid-12 .push-4 -->
+</pre>
+        </div><!-- END .grid-5 .omega -->
+      </section><!-- END #push-pull .clearfix -->
+
+		<!-- Start #prefix-suffix -->
+        
+      <section id="prefix-suffix" class="clearfix">
+        <div class="page-header">
+          <h1>Prefix &amp; Suffix <small>Offsetting columns</small></h1>
+        </div><!-- END .page-header -->
+        <h2>Padding</h2>
+        <p>The prefix and suffix classes are used within the grid to add columns of padding before or after a grid area. So if a header is designed with a logo that takes up six grid columns, and the content for the right half of the sidebar had three columns that are unused, and the content starts again, this would be one example where one could use a prefix or a suffix to fill the gap. <code>.prefix-</code> followed by a number makes that numbers worth of columns in <code>padding-left:;</code> to move the content X columns via padding.</p>
+        <p>Likewise the opposite, <code>.suffix-</code> followed by the a number makes that numbers worth of columns in <code>padding-right:;</code> to add padding after content.</p>
+        <h3>Demo</h3>
+        
+        <!-- This code is for demo purposes, and therefore should not be used via view source as code example, this code is specific to this markup guide - FJS -->
+        
+        <div class="demo">
+          <div class="fields clearfix">
+            <div class="grid-6 alpha"><div class="region">.grid-6</div></div>
+            <div class="grid-3 omega prefix-3"><div class="region">.grid-3 .prefix-3</div></div>
+          </div>
+          <div class="fields clearfix">
+            <div class="grid-6 suffix-3 alpha"><div class="region">.grid-6 .suffix-3</div></div>
+            <div class="grid-3 omega"><div class="region">.grid-3</div></div>
+          </div>
+        <div class="fields clearfix">
+          <div class="grid-3 alpha prefix-3"><div class="region">.grid-3 .prefix-3</div></div>
+          <div class="grid-3 omega suffix-3"><div class="region">.grid-3 .suffix-3</div></div>
+        </div>
+        </div><!-- END .demo -->
+        
+        <!-- This code is for demo purposes, and therefore should not be used via view source as code example, this code is specific to this markup guide - FJS -->
+        
+        <div class="grid-6 alpha">
+          <h3>Prefix Example Code</h3>
+          <pre class="prettyprint linenums grid-5 alpha">
+&lt;div class="container-12"&lt;/div>
+&lt;div class="grid-6">
+  &hellip;
+&lt;/div>&lt;!-- END .grid-6 -->
+&lt;div class="grid-3 prefix-3">
+  &hellip;
+&lt;/div>&lt;!-- END .grid-3 .prefix-3 -->
+&lt;/div>&lt;!-- END .container-12 -->
+</pre>
+        </div><!-- END .grid-6 .alpha -->
+        <div class="grid-6 omega">
+          <h3>Suffix Example Code</h3>
+          <pre class="prettyprint linenums grid-5 alpha">
+&lt;div class="container-12"&lt;/div>
+&lt;div class="grid-3 suffix-3">
+  &hellip;
+&lt;/div>&lt;!-- END .grid-3 .suffix-3 -->
+&lt;div class="grid-6">
+  &hellip;
+&lt;/div>&lt;!-- END .grid-6 -->
+&lt;/div>&lt;!-- END .container-12 -->
+</pre>
+      </div><!-- END .grid-6 .omega -->
+  </section><!-- #prefix-suffix .clearfix-->
+
+		<!-- Start #alpha-omega -->
+
+      <section id="alpha-omega" class="clearfix">
+      <div class="page-header">
+        <h1>Alpha &amp; Omega <small>Similar to the first and last letters of the Greek alphabet, sort of&hellip;</small></h1>
+      </div><!-- END .page-header -->
+      <div class="grid-12 alpha omega">
+        <h2>Out of the gutters</h2>
+        <p>Each column of the 12 or 16 grid system has 10px margin on the left and right called gutters. If one were to use <code>.grid-2</code> this would take up two columns, absorbing the width of the gutters between those columns, and adding 10px <code>margin-left</code> and <code>margin-right</code>. If there are nested grid's within a design, then removing the extra margin will keep most designs from breaking to the next line. The last demo below is the result of not using .alpha or .omega for any of these nested grid elements, the last <code>.grid-3</code> falls to the next line.</p>
+        <h3>Demo</h3>
+      </div><!-- END .grid-12 .alpha .omega -->
+      <!-- This code is for demo purposes, and therefore should not be used via view source as code example, this code is specific to this markup guide - FJS -->
+      
+      <div class="demo">
+        <div class="fields clearfix">
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+        </div>
+        <div class="fields clearfix">
+          <div class="grid-4 alpha"><div class="region">.grid-4 .alpha</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+        </div>
+        <div class="fields clearfix">
+          <div class="grid-3"><div class="region">.grid-3 .alpha</div></div>
+          <div class="grid-4 omega"><div class="region">.grid-4 .omega</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+        </div>
+        <div class="fields clearfix">
+          <div class="grid-3 alpha omega"><div class="region">.grid-3 .alpha .omega</div></div>
+          <div class="grid-3 alpha omega"><div class="region">.grid-3 .alpha .omega</div></div>
+          <div class="grid-3 alpha omega"><div class="region">.grid-3 .alpha .omega</div></div>
+          <div class="grid-3 alpha omega"><div class="region">.grid-3 .alpha .omega</div></div>
+        </div>
+        <div class="fields clearfix">
+          <div class="grid-3"><div class="region">.grid-3 </div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+          <div class="grid-3"><div class="region">.grid-3</div></div>
+        </div>
+      </div><!-- END .demo -->
+      
+      <!-- This code is for demo purposes, and therefore should not be used via view source as code example, this code is specific to this markup guide - FJS -->
+      
+      <h3>Code Example <small>Real case use</small></h3>
+      
+      <div class="grid-12 alpha omega">
+      <pre class="prettyprint linenums">
+&lt;div class="container-16">
+&lt;div class="grid-16">
+  &lt;div class="grid-8 alpha">
+    &hellip; These two div's are nested in a .grid-16, 8 + 8 is 16 &hellip;
+  &lt;/div>&lt;!-- .grid-8 .alpha -->
+  &lt;div class="grid-8 omega">
+    &hellip; and since the .grid-16 has it's left and right margin we 
+    remove the left and right margins, respectfully, in our two .grid-8's.
+  &lt;/div>&lt;!-- END .grid-8 .omega -->
+&lt;/div>&lt;!-- END .grid-16 -->
+&lt;/div>&lt;!-- END .container-16 --></pre>
+      </div><!-- END .grid-5 -->
+      
+      </section><!-- END #prefix-suffix .clearfix -->
+
+  </article><!-- END .grid-12 -->
+</div><!-- END .container-12 -->
+</section>
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

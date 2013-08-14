@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>   <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->	<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<title>Getting Started | Modular Markup Guide</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr-2.0.6.js"></script>
+
+	<!-- MH CUSTOM WEBSITE -->
+
+</head>
+<body data-spy="scroll">
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    <a href="index.html" class="brand">Modular Markup Guide</a>
+    <ul class="nav">
+      <li><a href="how-to-use.html">Getting Started</a></li>
+      <li><a href="the-grid.html">Grid Framework</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="php.html">PHP</a></li>
+      <li><a href="zoning.html">Zones</a></li>
+      <li><a href="ebb-and-flow.html">Ebb and Flow</a></li>
+    </ul>
+    </div><!-- END .container -->
+  </div><!-- END .navbar-inner -->
+</nav><!-- END .navbar .navbar-fixed-top -->
+<header>
+	<hgroup class="container-12">
+		<div class="jumbotron subhead">
+			<h1>Guidance</h1>
+			<p class="lead">High level overview of what to expect and some common naming conventions. <span class="label label-important">Final Review</span></p>
+			<div class="subnav">
+			<ul class="nav nav-pills">
+        <li><a href="#intro">Introduction</a></li>
+				<li><a href="#structure">File Structure</a></li>
+        <li><a href="#zones">Modular Zones</a></li>
+  			<li><a href="#example-code">Example Code</a></li>
+				<li><a href="#code-visuals">Code Visuals</a></li>
+        <li><a href="#what-where-why">Naming Conventions</a></li>
+			</ul>
+			</div><!-- END .subnav -->
+		</div>
+	</hgroup><!-- END .container-12 -->
+</header>
+	<section>
+		<div class="container-12">
+			<article class="content grid-12">
+
+        <!-- START #intro .clearfix -->
+
+        <section id="intro" class="clearfix">
+          <div class="page-header">
+            <h1>Introduction <small>Overview from 30,000 feet</small></h1>
+          </div><!-- END .page-header -->
+          <div class="grid-6 alpha">
+            <p>The purpose of our Markup Guide is to give clear direction on the methodology to follow when performing front-end development to our products, and a reference guide, all in one place. We will be using examples of code where ever we can and request feedback for unclear items in order to make this markup guide better. Email me at <a href="mailto:frank.stallone@lexisnexis.com">frank.stallone@lexisnexis.com</a> for feedback, clarity, or questions.</p>
+          </div><!-- END .grid-6 .alpha -->
+          <div class="grid-6 omega">
+          <p><strong>Starting with</strong> <a href="#examples">some</a> <a href="#code-visuals">general</a> <a href="#what-where-why">items</a>, we'll <a href="#zones">explain some of the theory behind our Modular code</a>, and we will drill into the nitty gritty <a href="css.html"><abbr title="Cascading Stylesheets">CSS</abbr></a>, <a href="javascript.html">Javascript</a>, <a href="php.html">PHP</a>. Throughout we'll discuss what we've done to make your developer job faster, easier, and painless for maintenance. Years of experience with <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr>, and JavaScript have been melted into the best practices we use, so let's begin! =)</p>
+          </div><!-- END .grid-6 .omega -->
+          <div class="grid-12 alpha omega">
+            <div class="alert alert-info">For examples we will use screenshots, code visuals, specific example pages, and finally <a href="http://code.google.com/p/google-code-prettify/" target="_blank">Google Prettify</a> to display code.</div>
+          </div><!-- END .grid-12 .alpha .omega -->
+        </section>
+  
+        <!-- START #structure .clearfix -->
+
+				<section id="structure" class="clearfix">
+          <div class="page-header">
+            <h1>Folder Structure <small>The files are inside the computer</small></h1>
+          </div><!-- END .page-header -->
+  				<div class="grid-4 prefix-1 alpha">
+          <pre class="prettyprint">
+client-folder/
+  ├── !base-build/
+  │   ├── html/
+  │   ├── img/
+  │   │   ├── shadowbox/
+  │   │   ├── sm-profile/
+  │   ├── js/
+  │   │   ├── plugins.js
+  │   │   ├── scripts.js
+  │   ├── index.html
+  │   ├── style.css
+  ├── !project-files/
+  │   │   ├── assets/
+  │   │   ├── design/
+  │   │   ├── files-from-client/
+  │   │   ├── updates/
+  │   ├── img/
+  │   ├── js/
+  │   ├── mobile/
+  ├── footer.php
+  ├── functions.php
+  ├── header.php
+  ├── screenshot.png
+  ├── sidebar.php
+  └── style.css
+</pre>
+          </div><!-- END .grid-6 .alpha -->
+          <div class="grid-7 omega">
+          <p><strong>To the left is a general visual breakdown of our folder/file structure.</strong> Since we are doing child themes in WordPress we simply do not need anywhere near as many files. Whatever WordPress files we do not include in the child theme will automatically use the parent theme. The basis of this structure comes from the lovely gents at <a href="http://html5boilerplate.com/" blank="_blank">HTML5 Boilerplate</a>. It has been adapted for WordPress themes, and to fit our needs with the design community, etc.</p>
+          <p>The <code>!base-build</code> folder is where the flat file templates are built for (typically) one inner page template and one home page template. This folder and contents never get uploaded to the server. Browser testing can be done easily, and JavaScript interaction can be tested as well. <code>!base-build/html/</code> folder is where video impimentation with Shadowbox can be implimented. <code>!base-build/img/</code> &amp; <code>js/</code> are for organizing your images and JavaScript code.</p>
+          <p><code>!project-files/</code> is where all files go that will never be uploaded to the server but are related to the project in some aspect. Any general assets, code modules or (what was originally intended for) original stock photography. </p>
+          <p>The rest of the files mimic the structure of the <code>!base-build/</code> folder with the exception of <code>mobile/</code>. the <code>mobile/</code> folder is used for WordPress's plugin WPTouchPro. WPTouchPro is the current mobile plugin used for our mobile phone offering. Other files in the base <code>client-folder/</code> includes a <code>function.php</code> file for adding specific navigations, widget areas, etc.; <code>screenshot.png</code> a screenshot of the home page themplate; and a few other <code>.php</code> files that are the minimum requirements for the WordPress children themes.</p>
+          </div><!-- END .grid-12 .alpha .omega -->
+        </section>
+  
+        <!-- START #zones .clearfix -->
+        
+        <section id="zones" class="clearfix">
+         <div class="page-header">
+           <h1>Modular Zones <small>Get in the zone, Autozone.</small></h1>
+         </div>
+        
+         <div class="grid-4 alpha">
+           <h3>Zen Garden</h3>
+           <p>The idea behind our Modular websites is loosely based of a brilliant piece of work by <a href="http://www.mezzoblue.com/" target="_blank">Dave Shea</a> called <a href="http://www.csszengarden.com/" target="_blank">the CSS Zen Garden</a>. The idea was with one set of HTML one could create just about any visual web site they wanted to. Go to <a href="http://www.csszengarden.com/" target="_blank">the CSS Zen Garden</a> for more details and examples.</p>
+           <h3>Modular</h3>
+           <p>The goal with our Modular's is to have one snippet set of HTML that can be used as a head start for each of <span class="badge badge-warning">6</span> zones. That snippet of HTML is properly labeled, and can be copied and pasted into the document one is working on to get styling with CSS faster!</p>
+            <h3>Zones</h3>
+            <p>The concept of a 'zone' is a horizontal slice, or region of a web site. This horizontal slice is represented by two factors, the six zones are listed below and each zone has multiple versions described with a number. In other words a zone of <span class="badge badge-info">Header 4</span> is the header zone, and the 4th option of that zone. One would look in the Header Zone snippets for option 4. The designers based their design off this layout and this HTML snippet will give one a head start on getting the CSS going.</p>
+            <p><strong>A full list of zones:</strong></p>
+            <ol>
+              <li>Header Zone</li>
+              <li>Marketing Zone</li>
+              <li>Buckets Zone</li>
+              <li>Content Zone</li>
+              <li>Footer Zone</li>
+              <li>Quick Contact Zone</li>
+            </ol>
+        </div><!-- END .grid-4 .alpha -->
+         <div class="grid-8 omega">
+           <img src="img/modular-scaffolding.png" alt="Modular Scaffolding" />
+         </div><!-- END .grid-8 .omega -->
+         <div class="grid-12 alpha omega">
+           <div class="alert alert-info"><strong>Note:</strong> Not all Zones are used on every project. To be truly flexible some zones may be removed, see the specific project for details.</div><!-- END .alert .alert-info -->
+         </div><!-- END .grid-12 .alpha .omega -->
+        </section><!-- END #zones .clearfix -->
+
+        <!-- START #example-code .clearfix -->
+  
+        <section id="example-code" class="clearfix">
+          <div class="page-header">
+            <h1>Example Code <small>Google Prettify with line numbers</small></h1>
+          </div><!-- END .page-header -->
+          <div class="grid-4 prefix-2 alpha">
+            <p>We're going to put line numbers on everything, although if you want to copy and paste the code those line numbers will not be in your copy.</p>
+            <div class="alert alert-info">This is <a href="http://code.google.com/p/google-code-prettify/" target="_blank">Google Prettify</a>, open source, so you too can use this for any project.</div>
+          </div><!-- END .grid-4 .prefix-2 .alpha-->
+          <div class="grid-6 omega">
+          <pre class="prettyprint linenums">
+&lt;div class="container-12">
+  &lt;div class="grid-12">&lt;/div>&lt;!-- END .grid-12 -->
+  &lt;div class="grid-6">&lt;/div>&lt;!-- END .grid-6 -->
+  &lt;div class="grid-6">&lt;/div>&lt;!-- END .grid-6 -->
+&lt;/div>&lt;!-- END .container-12 -->
+</pre>
+          </div><!-- END .grid-6 .omega -->
+        </section>
+        
+        <!-- START #code-visuals .clearfix -->
+        
+        <section id="code-visuals" class="clearfix">
+          <div class="page-header">
+            <h1>Code Visuals <small>When we can, we'll show you more visuals</small></h1>
+          </div><!-- END .page-header -->
+          <div class="grid-12 alpha omega">
+            <p>Quick example of the above code visual below, all available sizes can be seen at: Zone Example page.</p>
+          </div><!-- END .grid-12 .alpha .omega -->
+          <div class="demo"><!-- This code is for demo purposes, and therefore should not be used via view source as code example, this code is specific to this markup guide - FJS -->
+            <div class="fields clearfix">
+              <div class="region grid-12 alpha omega">.grid-12</div>
+            </div>
+            <div class="fields clearfix">
+              <div class="region grid-6 alpha">.grid-6</div>
+              <div class="region grid-6 omega">.grid-6</div>
+            </div>
+          </div><!-- END .demo -->
+        </section>
+      
+      		<!-- Start #what-where-why .clearfix -->
+      
+            <section id="what-where-why" class="clearfix">
+              <div class="page-header">
+                <h1>Naming Conventions <small>Order in the court!</small></h1>
+              </div>
+              <div class="grid-4 alpha">
+                <h2>What? Where? Why?</h2>
+                <p>We believe in using thoughtful, mindful, meaningful markup. We are creative beings and appreciate the work we do so why not build some standards to make things easy for others to figure out when they are reading our code?</p>
+                <p>Also note that the web does not like spaces, so instead replace spaces with dashes. Use dashes between each word in your naming conventions and lowercase lettering.</p>
+              </div><!-- END .grid-4 alpha -->
+              <div class="grid-4">
+                <h2>Where are we using this?</h2>
+                <p><strong>Everywhere.</strong> <em>Let's list it out to make it even more clear:</em></p>
+                <ul>
+                  <li><strong>HTML</strong></li>
+                  <li><strong>CSS</strong></li>
+                  <li><strong>JavaScript</strong></li>
+                  <li><strong>Photoshop Slices</strong></li>
+                  <li><strong>Media</strong></li>
+                  <li><strong>Folders</strong></li>
+                </ul>
+              </div><!-- END .grid-4 -->
+              <div class="grid-4 omega">
+                <h2>Three Questions</h2>
+                <p>Remember these three questions whenever you are naming something and you'll start to see things fall into place.</p>
+                <ol>
+                  <li><strong>What is it?</strong></li>
+                  <li><strong>Where is it?</strong></li>
+                  <li><strong>How would you describe it?</strong></li>
+                </ol>
+                <div class="alert alert-error"><strong>Note:</strong> One doesn't have to answer all three, sometimes the first two are specific enough. Use your best judgement.</div>
+              </div><!-- END .grid-4 .omega -->
+              <img src="img/screenshot-naming-conventions.png" alt="Photoshop Naming Conventions" class="grid-12 alpha omega" style="margin: 10px 0;" />
+              <div class="grid-12 alpha omega"><div class="alert alert-success"><strong>Sometimes the first two questions are enough.</strong> <code>screenshot-naming-convention.png</code> is enough for this image to be descriptive.</span></div>
+              </div><!-- END .grid-12 .alpha .omega -->
+               <div class="grid-4 alpha">
+                 <div class="thumbnail">
+                   <img src="img/screenshot-file-structure.png" alt="Screenshot of a File Structure" />
+                   <div class="caption"><h5>Logical naming in the images folder helps readability</h5></div>
+                 </div><!-- END .thumbnail -->
+                 
+               </div><!-- END .grid-4 alpha -->
+               <div class="grid-8 omega">
+                 <h2>Examples</h2>
+                 <p>If we look at the screenshot to the left we can start to see how a simple naming convention for something as simple as the <code>/img/</code> folder can bring great benefits visually, and organizationally.</p>
+                  <div class="alert alert-warning"><h4 class="alert-heading">All the other kids with the pumped up kicks!</h4> Again we're using dashes instead of spaces, and lowercased naming.</div>
+                 <h3>Get those creative juices flowing</h3>
+                 <p>The below may not be relevant together, but they are starting points. The screenshot to the left is a more specific working example, but here are some terms to help you wrap your mind around being mindful with naming</p>
+                 <table class="table table-bordered table-striped">
+                   <thead>
+                   <tr>
+                     <th>What?</th>
+                     <th>Where?</th>
+                     <th>Descriptions</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                     <tr>
+                       <td>button</td>
+                       <td>header</td>
+                       <td>video</td>
+                     </tr>
+                     <tr>
+                       <td>logo</td>
+                       <td>marketing-zone</td>
+                       <td>hover</td>
+                     </tr>
+                     <tr>
+                       <td>bg</td>
+                       <td>sidebar</td>
+                       <td>contact</td>
+                     </tr>
+                     <tr>
+                       <td>video</td>
+                       <td>content</td>
+                       <td>blockquote</td>
+                     </tr>
+                     <tr>
+                       <td>bullet</td>
+                       <td>footer</td>
+                       <td>awards</td>
+                     </tr>
+                     <tr>
+                       <td>icon</td>
+                       <td>sidebar</td>
+                       <td>aop</td>
+                     </tr>
+                     <tr>
+                       <td>badge</td>
+                       <td>aside</td>
+                       <td></td>
+                     </tr>
+                   </tbody>
+                 </table>
+               </div><!-- END .grid-8 .omega -->
+            </section><!-- END #what-where-why .clearfix-->
+
+
+			</article><!-- END .content .grid-12 -->
+		</div><!-- END .container-12 -->
+	</section>
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

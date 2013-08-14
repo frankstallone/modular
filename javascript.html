@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>   <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->	<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<title>JavaScript | Modular Markup Guide</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr-2.0.6.js"></script>
+
+	<!-- MH CUSTOM WEBSITE -->
+
+</head>
+<body data-spy="scroll">
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    <a href="index.html" class="brand">Modular Markup Guide</a>
+    <ul class="nav">
+      <li><a href="how-to-use.html">Getting Started</a></li>
+      <li><a href="the-grid.html">Grid Framework</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="php.html">PHP</a></li>
+      <li><a href="zoning.html">Zones</a></li>
+      <li><a href="ebb-and-flow.html">Ebb and Flow</a></li>
+    </ul>
+    </div><!-- END .container -->
+  </div><!-- END .navbar-inner -->
+</nav><!-- END .navbar .navbar-fixed-top -->
+<header>
+	<hgroup class="container-12">
+		<div class="jumbotron subhead">
+			<h1>Javascript</h1>
+			<p class="lead">Organizing plugins, scripts, and best practices <span class="label label-important">Final Review</span></p>
+			<div class="subnav">
+  			<ul class="nav nav-pills">
+    			<li><a href="#overview-">Frameworks</a></li>
+  				<li><a href="#plugins-">Plugins</a></li>
+  				<li><a href="#scripts-">Scripts</a></li>
+  				<li><a href="#js-snippets">Snippets</a></li>
+  				<li><a href="#slidesjs">SlidesJS</a></li>
+  				<li><a href="#shadowbox">Shadowbox</a></li>
+  			</ul>
+			</div><!-- END .subnav -->
+		</div><!-- END .jumbotron subhead -->
+	</hgroup><!-- END .container-12 -->
+</header>
+<section>
+	<div class="container-12">
+		<article class="grid-12">
+		
+		<!-- Start #overview- -->
+
+      <section id="overview-" class="clearfix">
+        <div class="page-header">
+          <h1>Frameworks <small>Also known as Libraries</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>What is a Framework?</h3>
+          <p>JavaScript is considered by most the language of the web. It is object-oriented, meaning it uses <code>objects</code> which can contain data and <code>methods</code> that act upon that data. As the demands for JavaScript have been increasing and easier means to develop these dynamic interfaces was needed. Thus libraries, or frameworks as we'll call them here were created. For sake of keeping this simple, we use jQuery library (or framework). This can be found in <code>/js/libs/jquery.js</code> or relatively file name.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-5">
+          <h4>jQuery</h4>
+          <p>From <a href="http://docs.jquery.com/How_jQuery_Works">jQuery's website</a>,</p>
+          <blockquote><q>jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript.</q></blockquote>
+          <p>Since we are using jQuery we are able to code once, and know it will work cross-browser, and cross-platform. We also have at our disposal generous plugin's and scripts that have been written by brilliant developers at our disposal for getting things done!</p>
+        </div><!-- END .grid-5 -->
+        <div class="grid-3 omega">
+          <h4>Browser Support for jQuery</h4>
+          <ul>
+            <li>Firefox Current - 1 version</li>
+            <li>Internet Explorer 6+</li>
+            <li>Safari Current - 1 version</li>
+            <li>Opera Current - 1 version</li>
+            <li>Chrome Current - 1 version</li>
+          </ul>
+        </div><!-- END .grid-3 .omega -->
+        <div class="grid-12 alpha omega">
+          <div class="alert alert-success">
+          <h4 class="alert-heading">This is heavy!</h4>
+          	Because JavaScript code tends to be heavier on the browser than other web languages, we load mostly all of it in the footer below the content. Keeping on Modernizr in the header for HTML5 shim which will be discussed in further detail later.</div>  			  
+        </div><!-- END .grid-12 .alpha .omega -->
+      </section><!-- END #overview- .clearfix-->
+
+		<!-- Start #plugins- -->
+
+      <section id="plugins-" class="clearfix">
+        <div class="page-header">
+			  <h1>Plugins <small>One file, all your plugins organized.</small></h1>
+			  </div><!-- END .page-header -->
+			  <div class="grid-5 alpha">
+			    <h3>What are plugins?</h3>
+			    <p><code>Plugins.js</code> is meant to hold all of a site's plugin code. Instead of linking to many different files, we can improve performance by including plugin code directly in this one file. This works effectively for our use because we're creating relatively small websites for our clients. If we were doing larger projects like Lawyers.com where there were more than 50 pages, it would make more sense to modularize our scripts so that we do not bloat every page with code. Since we are really only going to be using 1 to 5 plugins max this is the best balance between performance and organization.</p>
+			  </div><!-- END .grid-5 alpha -->
+			  <div class="grid-5">
+			    <h3>What are considered plugins?</h3>
+			    <p>Plugins are JavaScript code pre-written, tested, and standardized. For example, some JavaScript written for making a universal modal window that works cross browser</p>
+			    <ul>
+            <li>Preserves useful defaults, unlike many CSS resets.</li>
+  			    <li>Normalizes styles for a wide range of elements.</li>
+  			    <li>Corrects bugs and common browser inconsistencies.</li>
+  			    <li>Improves usability with subtle improvements.</li>
+  			    <li>Explains what code does using detailed comments.</li>
+			    </ul>
+			  </div><!-- END .grid-5 -->
+			  <div class="grid-2 omega">
+			  <h4>Default Plugins</h4>
+			  <p>List of plugins now minified and included in all builds:</p>
+			  <ul>
+			    <li><a href="http://slidesjs.com/">SlidesJS</a></li>
+			    <li><a href="http://www.shadowbox-js.com/">Shadowbox</a></li>
+			  </ul>
+			  <span class="label label-info">Links to respective sites</span>
+			  </div><!-- END .grid-2 .omega -->
+        <div class="grid-12 alpha omega">
+          <h4>Code Example</h4>
+          <p>This is the default code in <code>plugins.js</code> and can be used for <a href="http://paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/" target="_blank">console log testing</a>. We also include SlidesJS and Shadowbox in all of our new builds. For the purpose of this demo we will not paste the entire code here. If you are going to add a plugin to this file add it to the bottom, make sure you comment it the same way it has been shown in the file, and update the glossary at the top of the file. <span class="label label-important">All plugin's would go below these lines of code:</span></p>
+          <pre class="prettyprint linenums">
+// usage: log('inside coolFunc', this, arguments);
+// paulirish.com/2009/log-a-lightweight-wrapper-for-consolelog/
+window.log = function f(){ log.history = log.history || []; log.history.push(arguments); if(this.console) { var args = arguments, newarr; try { args.callee = f.caller } catch(e) {}; newarr = [].slice.call(args); if (typeof console.log === 'object') log.apply.call(console.log, console, newarr); else console.log.apply(console, newarr);}};
+
+// make it safe to use console.log always
+(function(a){function b(){}for(var c="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),d;!!(d=c.pop());){a[d]=a[d]||b;}})
+(function(){try{console.log();return window.console;}catch(a){return (window.console={});}}());
+
+
+// place any jQuery/helper plugins in here, instead of separate, slower script files.
+
+/* 
+	1) Slides for slideshow on home page (http://slidesjs.com/)
+	2) Shadowbox for YouTube Video in sidebar (http://shadowbox-js.com/)
+		- Includes Sizzle CSS Selector Engine
+		- Includes SWFObject
+*/
+</pre>
+          <span class="label label-inverse">For demo purposes I have removed the minified code.</span>
+        </div><!-- END .grid-12 .omega-->
+			</section><!-- END #plugins .clearfix -->
+
+		<!-- Start #scripts- -->
+
+      <section id="scripts-" class="clearfix">
+        <div class="page-header">
+			  <h1>Scripts <small>Calling that plugin? Call toll free here.</small></h1>
+			  </div><!-- END .page-header -->
+			  <div class="grid-5 alpha">
+			    <h3>What are scripts?</h3>
+			    <p><code>Scripts.js</code> is meant to hold all of the site-specific javascript. For instance, if we are using SlidesJS on a site, we have that plugin's code in the <code>plugins.js</code> file and we'll write our specific calls for that plugin in our <code>scripts.js</code>. This works because we call the <code>scripts.js</code> in our HTML after the <code>plugins.js</code>.</p>
+			  </div><!-- END .grid-5 alpha -->
+			  <div class="grid-4">
+			    <h3>Rules of the road</h3>
+			    <p>Comment your code. Make sure you add your name to the author list if you are going to be making edits here, that way if someone comes back they know who to ask if they need ot figure out what does what, or to fix an issue that my have occured.</p>
+			  </div><!-- END .grid-5 -->
+			  <div class="grid-3 omega">
+			  <h4>Default Script Example</h4>
+			  <p>Included in every site is a snippet to use an example. Not using Shadowbox? Delete this from the file before launching your site. Keep the Author commented area in case later down the road Javascript integration is requested.</p>
+			  </div><!-- END .grid-2 .omega -->
+        <div class="grid-12 alpha omega">
+          <h4>Code Examples</h4>
+          <p>This is the default code in <code>scripts.js</code> and can be used for console log testing. <span class="label label-important">All new scripts would go below these lines of code:</span></p>
+          <pre class="prettyprint linenums">
+/* 
+
+Author: 
+
+*/
+
+
+/* -- Initiate Shadowbox w/ Custom Options -- */
+
+Shadowbox.init({
+	continuous: true,
+	overlayOpacity: 0.9	
+});
+</pre>
+        </div><!-- END .grid-12 .omega-->
+			</section><!-- END #scripts- .clearfix -->
+
+		<!-- Start #js-snippets -->
+
+      <section id="js-snippets" class="clearfix">
+        <div class="page-header">
+          <h1>Snippets <small>Reusable code, let's do this!</small></h1>
+        </div>
+        <img src="img/screenshot-code.png" alt="Code Snippet Screenshot" class="grid-4 alpha">
+        <div class="grid-8 omega">
+          <h2>Relevant snippets</h2>
+          <p>These are some of the most used snippets, feel free to <a href="http://help.adobe.com/en_US/dreamweaver/cs/using/WSc78c5058ca073340dcda9110b1f693f21-7bd8a.html#WSc78c5058ca073340dcda9110b1f693f21-7bd2a" target="_blank">copy and paste these into your Snippets on Dreamweaver</a> or just come back here and grab them up.</p>         
+        </div><!-- END .grid-4 alpha -->
+      </section><!-- END #js-snippets .clearfix-->
+
+		<!-- Start #slidesjs .clearfix -->
+
+      <section id="slidesjs" class="clearfix">
+        <div class="page-header">
+          <h1>SlidesJS <small>a simple slideshow plugin for jQuery.</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>SlidsJS is the simple slideshow plugin for jQuery we use. There are many <a href="http://slidesjs.com/#docs">useful features you can read more about here</a>.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h2>Minified Plugin</h2>
+          <p>The minified code should be in the client folder automatically. In other words <code>/clientfolder/!base-build/js/plugins.js</code>. Take a look and see if the glossary in that <code>plugins.js</code> file includes SlidesJS, if not <a href="http://slidesjs.com/">download the minified source here</a>.</p>
+          <h2>Common Used Options</h2>
+          <p>This is a snippet for reference for the <code>scripts.js</code> with options already set. You can <a href="http://slidesjs.com/#docs">find more options in the docs section of the SlidesJS website</a>. The following snippet looks for containing HTML element with the class of <code>.banner</code>.</p>
+          <pre class="prettyprint linenums">
+$(function(){
+	$(".banner-home").slides({
+		preload: true,
+		play: 7000,
+		pause: 2500,
+		effect: 'fade',
+		crossfade: true,
+		container: 'home-banner-container',
+		pagination: false,
+		generatePagination: false,
+		randomize: true
+	});
+});
+</pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3</td>
+                <td><code>play</code></td>
+                <td><code>7000</code> milliseconds, and accepts any positive number that will set to true. Default is <code>0</code> or <code>false</code>.</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><code>pause</code></td>
+                <td><code>2500</code> milliseconds, will pause the slideshow on next/prev or pagination click. Default is <code>0</code> or <code>false</code>.</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><code>effect</code></td>
+                <td><code>'fade'</code>, also accepts <code>'slide'</code> or <code>'slide, fade'</code>. Default is <code>'slide'</code>.</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><code>crossfade</code></td>
+                <td><code>true</code>, crossfade images in a image based slideshow. Default value is <code>false.</code></td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><code>container</code></td>
+                <td><code>'home-banner-container'</code>, class name for slides container. Default value is <code>'slides_container'</code>.</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><code>pagination</code></td>
+                <td><code>false</code>, if you're using pagination you can set to <code>true</code>.</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><code>generatePagination</code></td>
+                <td><code>false</code>, Auto generate pagination. Default value is <code>'true'</code>.</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><code>randomize</code></td>
+                <td><code>true</code>, set <code>false</code> to play slides in order.</td>
+              </tr>
+              </tbody>
+          </table>
+          <div class="alert alert-info"><h4 class="alert-heading">The above is just an example!</h4>
+            The above is a snippet of code a developer uses to start their coding. Below is the minimal code required to get SlidesJS working.
+          </div>
+          <pre class="prettyprint linenums">
+$(function(){
+    $("#slides").slides();
+});
+</pre>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #slidesjs .clearfix-->
+      
+		<!-- Start #shadowbox .clearfix -->
+
+      <section id="shadowbox" class="clearfix">
+        <div class="page-header">
+          <h1>Shadowbox <small>a universal jQuery modal window.</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>Shadowbox is the simple and complex plugin for jQuery we use for <a href="http://en.wikipedia.org/wiki/Modal_window">modal windows</a>. There are <a href="http://www.shadowbox-js.com/">a plethora of options you can read more about here</a>.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h2>Minified Plugin</h2>
+          <p>The minified code should be in the client folder automatically. In other words <code>/clientfolder/!base-build/js/plugins.js</code>. Take a look and see if the glossary in that <code>plugins.js</code> file includes Shadowbox, if not <a href="http://www.shadowbox-js.com/">download the minified source here</a>.</p>
+          <h2>Common Used Options</h2>
+          <p>This is a snippet for reference for the <code>scripts.js</code> with options already set. You can <a href="http://slidesjs.com/#docs">find more options in the docs section of the SlidesJS website</a>.</p>
+          <pre class="prettyprint linenums">
+Shadowbox.init({
+	continuous: true,
+	overlayOpacity: 0.9	
+});
+</pre>
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2</td>
+                <td><code>continuous</code></td>
+                <td><code>true</code> enables "continuous" galleries.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><code>overlayOpacity</code></td>
+                <td><code>0.9</code> opacity to use for the modal overlay. Defaults to 0.5.</td>
+              </tr>
+              </tbody>
+          </table>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #shadowbox .clearfix-->
+
+      
+      
+    </article><!-- END .grid-12 -->
+  </div><!-- END .container-12 -->
+</section>
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

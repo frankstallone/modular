@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>   <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->	<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<title>PHP | Modular Markup Guide</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr-2.0.6.js"></script>
+
+	<!-- MH CUSTOM WEBSITE -->
+
+</head>
+<body data-spy="scroll">
+<nav class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    <a href="index.html" class="brand">Modular Markup Guide</a>
+    <ul class="nav">
+      <li><a href="how-to-use.html">Getting Started</a></li>
+      <li><a href="the-grid.html">Grid Framework</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="php.html">PHP</a></li>
+      <li><a href="zoning.html">Zones</a></li>
+      <li><a href="ebb-and-flow.html">Ebb and Flow</a></li>
+    </ul>
+    </div><!-- END .container -->
+  </div><!-- END .navbar-inner -->
+</nav><!-- END .navbar .navbar-fixed-top -->
+<header>
+	<hgroup class="container-12">
+		<div class="jumbotron subhead">
+			<h1>PHP</h1>
+			<p class="lead">WordPress to introduce you into PHP <span class="label label-important">Final Review</span></p>
+			<div class="subnav">
+  			<ul class="nav nav-pills">
+    			<li><a href="#overview">Overview</a></li>
+  				<li><a href="#snippets">Snippets</a></li>
+          <li><a href="#hooks">Hooks</a></li>
+          <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+          <li><a href="#custom-fields">Custom Fields</a></li>
+          <li><a href="#conditionals">Conditionals</a></li>
+          <li><a href="#dynamic-navigations">Dynamic Navigations</a></li>
+          <li><a href="#random-image-banner">Random Image Banner</a></li>
+  			</ul>
+			</div><!-- END .subnav -->
+		</div><!-- END .jumbotron subhead -->
+	</hgroup><!-- END .container-12 -->
+</header>
+<section>
+	<div class="container-12">
+		<article class="grid-12">
+		
+		<!-- Start #overview -->
+
+      <section id="overview" class="clearfix">
+        <div class="page-header">
+          <h1>Overview <small>Let's set some ground rules</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h2>Why a section on PHP?</h2>
+          <p>We're using <a href="http://codex.wordpress.org/Create_A_Network" target="_blank">WordPress Multisite</a>. Heard of it? Sure you have, Google says there are roughly 1,900,000,000 results for "WordPress". WordPress is based on PHP which is a back-end language that we'll need to get a little familiar with.</p>
+          <div class="alert alert-info"><strong>This will be light reading!</strong> We're not diving into any crazy concepts because honestly for what were doing it's pretty much snippets we'll be interested in.</div>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-4">
+          <h2>WordPress</h2>
+          <p>Technically we're using the parent, child relationship that is known as WordPress Multisite which makes life a lot easier for front-end developers. We have a lot of presets that make our lives easier. For that reason we can create modular and custom websites better. </p>
+          <p>For the most part when we get to WordPress we're going to need to know how to make things dynamic. Dynamic navigations, content areas, imagery, banners, etc.</p>
+        </div><!-- END .grid-4 -->
+        <div class="grid-4 omega">
+          <div class="thumbnail">
+            <img src="img/screenshot-wordpress.png" alt="WordPress Screenshot" />
+          </div>
+        </div><!-- END .grid-4 .omega -->
+      </section><!-- END #overview .clearfix-->
+      
+		<!-- Start #snippets -->
+
+      <section id="snippets" class="clearfix">
+        <div class="page-header">
+          <h1>Snippets <small>Reusable code, let's do this!</small></h1>
+        </div>
+        <img src="img/screenshot-code.png" alt="Code Snippet Screenshot" class="grid-4 alpha">
+        <div class="grid-8 omega">
+          <h2>Relevant snippets</h2>
+          <p>These are some of the most used snippets, feel free to <a href="http://help.adobe.com/en_US/dreamweaver/cs/using/WSc78c5058ca073340dcda9110b1f693f21-7bd8a.html#WSc78c5058ca073340dcda9110b1f693f21-7bd2a" target="_blank">copy and paste these into your Snippets on Dreamweaver</a> or just come back here and grab them up.</p>
+          <h3>Quick Snippets</h3>
+          <p>Here is a list of quick, common, and easy WordPress PHP snippets:</p>
+          <ul class="unstyled">
+          	<li><span class="label label-inverse">Line 1</span> &mdash; Returns the current site URL (<code>current-client-folder.cert-lawlinks.com</code>)</li>
+          	<li><span class="label label-inverse">Line 2</span> &mdash; Returns the template URL (<code>template.cert-lawlinks.com</code>)</li>
+          	<li><span class="label label-inverse">Line 4</span> &mdash; Returns Gravity Forms QC Form</li>
+          	<li><span class="label label-inverse">Line 3</span> &mdash; Returns <code>sidebar.php</code></li>
+          </ul>
+           <pre class="prettyprint linenums">
+&lt;?php echo get_stylesheet_directory_uri();?>
+&lt;?php bloginfo('template_url'); ?>
+&lt;?php gravity_form(3, false, false, false, '', false); ?>
+&lt;?php get_sidebar(); ?>
+</pre>
+         
+        </div><!-- END .grid-4 alpha -->
+      </section><!-- END #snippets .clearfix-->
+      
+		<!-- Start #hooks .clearfix -->
+
+      <section id="hooks" class="clearfix">
+        <div class="page-header">
+          <h1>Hooks <small>Reusable common attributes</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>Hooks are strings of text that can be reused throughout a theme or content on any one specific site. In other words, when working on a clients WordPress site, their address, and phone number can be implemented on the theme level, or in the content are using a snippet of PHP or shortcode. A shortcode is simply a word or phrase surrounded with brackets, like <code>[gallery]</code>, when used in the content of a web site will pull special kind functionality, or simple content depending on the shortcode.</p>
+          <p>We are going to do a high level overview here, <a href="http://webops.reedref.com/wiki/Development:Hooks">for more information check out our Wikipedia article</a>.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h2>Shortcodes &amp; PHP Tag Snippets</h2>
+          <p>Below is a convenient table where you can quickly copy and paste the appropriate hook shortcode or tag.</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Shortcode</th>
+              <th>PHP Tag</th>
+              <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>[ln::phone]</code></td>
+                <td><code>&lt;?=ln::$i->phone?></code></td>
+                <td>Phone Number</td>
+              </tr>
+              <tr>
+                <td><code>[ln::fax]</code></td>
+                <td><code>&lt;?=ln::$i->fax?></code></td>
+                <td>Fax</td>
+              </tr>
+              <tr>
+                <td><code>[ln::address->address1]</code></td>
+                <td><code>&lt;?=ln::$i->address->address1?></code></td>
+                <td>First line of the Address</td>
+              </tr>
+              <tr>
+                <td><code>[ln::address->address2]</code></td>
+                <td><code>&lt;?=ln::$i->address->address2?></code></td>
+                <td>Second line of the Address (Suite #)</td>
+              </tr>
+              <tr>
+                <td><code>[ln::address->city]</code></td>
+                <td><code>&lt;?=ln::$i->address->city?></code></td>
+                <td>City</td>
+              </tr>
+              <tr>
+                <td><code>[ln::address->state]</code></td>
+                <td><code>&lt;?=ln::$i->address->state?></code></td>
+                <td>State</td>
+              </tr>
+              <tr>
+                <td><code>[ln::address->zip]</code></td>
+                <td><code>&lt;?=ln::$i->address->zip?></code></td>
+                <td>Zip code</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- END .grid-8 .omega -->
+        <div class="grid-12 alpha omega">
+          <div class="alert alert-info"><h4 class="alert-heading">Need to create a new hook?</h4>
+          Check our Wikipedia article, <a href="http://webops.reedref.com/wiki/Development:Hooks#Adding_Custom_Hooks_to_your_Theme">Adding Custom Hooks to your Theme</a>, for detailed in instructions on registering new hooks in the <code>functions.php</code>.
+          </div>
+        </div>
+      </section><!-- END #hooks .clearfix-->
+
+		<!-- Start #breadcrumbs -->
+
+      <section id="breadcrumbs" class="clearfix">
+        <div class="page-header">
+          <h1>Breadcrumbs <small></small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>Breadcrumbs are auto-generated based on the page title in WordPress and can be used in multiple ways, using CSS to hide parents and the home button.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h4>lexis_breadcrumbs('&lt;');</h4>
+          <p>This function allows you to change the delimiter, boundary or separator between the different parents and children.</p>
+          <p><span class="label label-info">If no delimiter is required place a non-breaking space tag, or a space instead.</span></p>
+          <h4>CSS Output</h4>
+          <table class="table table-bordered table-striped">
+          	<thead>
+              <tr>
+                <th>CSS Class</th>
+          			<th>Translation</th>
+          		</tr>
+          	</thead>
+            <tbody>
+            	<tr>
+            		<td><code>.current</code></td>
+            		<td>The current child page you are on has this class</td>
+            	</tr>
+            	<tr>
+            		<td><code>.breadcrumb_home</code></td>
+            		<td>The home breadcrumb has this class</td>
+            	</tr>
+            	<tr>
+            		<td><code>.breadcrumb_01</code></td>
+            		<td>This is a sequence of nested parents, the number depends on the depth</td>
+            	</tr>
+            </tbody>
+          </table>
+          <h4>PHP Snippet</h4>
+          <pre class="prettyprint linenums">
+&lt;?php if (function_exists('lexis_breadcrumbs')) lexis_breadcrumbs('&lt;'); ?>
+</pre>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #breadcrumbs .clearfix-->
+ 
+ 		<!-- Start #custom-fields -->
+
+      <section id="custom-fields" class="clearfix">
+        <div class="page-header">
+          <h1>Custom Fields <small>Custom meta data</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>WordPress has <a href="http://codex.wordpress.org/Custom_Fields" target="_blank">Custom Fields</a> which extends the capabilities for custom meta data on specific pages. This is a useful feature for page specific content, banners or imagery.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h4>Parameters &amp; valid values and descriptions</h4>
+          <table class="table table-bordered table-striped">
+          	<thead>
+              <tr>
+                <th>Parameters</th>
+          			<th>Values</th>
+          		</tr>
+          	</thead>
+            <tbody>
+            	<tr>
+            		<td><code>$post_id</code></td>
+            		<td><em>(integer)</em> The ID of the post from which you want the data. Use <code>1post->ID</code> to get a post's ID <small class="muted">(default)</small></td>
+            	</tr>
+            	<tr>
+            		<td><code>$key</code></td>
+            		<td><em>(string)</em> A string containing the name of the meta value you want. See our <a href="how-to-use.html#what-where-why">naming conventions</a>, use meaningful keys like <code>'inner-banner'</code>.</td>
+            	</tr>
+            	<tr>
+            		<td><code>$single</code></td>
+            		<td><em>(boolean)</em> If set to true then the function will return a single result, as a string. If false, or not set, then the function returns an array of the custom fields. This is not intuitive. For example, if you fetch a serialized array with this method you want $single to be true to actually get an unserialized array back. If you pass in false, or leave it out, you will have an array of one, and the value at index 0 will be the serialized string.</td>
+            	</tr>
+            </tbody>
+          </table>
+          <h4>PHP Snippet</h4>
+          <p>This snippet gets the post ID of the page, then looks for a custom field labeled 'custom-field'* and then prints that value. If there is no value, or no custom field set, the <code>else</code> statement should have a fall back.</p>
+          <div class="alert alert-warning">* 'custom-field' is too arbitrary and should never be used. Describe what your content is.</div>
+          <pre class="prettyprint linenums">
+&lt;?php if ( get_post_meta($post->ID, 'custom-field', true) ) { 'custom-field' ?>
+  &lt;?php echo get_post_meta($post->ID, 'custom-field', true); 'custom-field' ?>
+&lt;?php } else { ?>
+  &lt;!-- back-up / default HTML goes here -->
+&lt;?php } ?>
+</pre>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #custom-fields .clearfix-->
+      
+ 		<!-- Start #conditionals -->
+
+      <section id="conditionals" class="clearfix">
+        <div class="page-header">
+          <h1>Conditionals <small>if/else statements</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>All of our sites have specific home pages, there are a few conditional statements that allows one to dynamically find out if one is on the homepage or another page of the web site. We'll give a few more conditions for examples, which are met or not and return true, or false.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h4>Conditions</h4>
+          <table class="table table-bordered table-striped">
+          	<thead>
+              <tr>
+                <th>Condition</th>
+          			<th>Value</th>
+          		</tr>
+          	</thead>
+            <tbody>
+            	<tr>
+            		<td><code>is_front_page()</code></td>
+            		<td>Displays true when the front of the site is displayed, whether it is posts or a page.</td>
+            	</tr>
+            	<tr>
+            		<td><code>is_single()</code></td>
+            		<td><em>(string)</em> When any single Post (or attachment, or custom Post Type) page is being displayed. (False for Pages)</td>
+            	</tr>
+            	<tr>
+            		<td><code>is_single( '17' )</code></td>
+            		<td>When Post 17 is being displayed as a single Post.</td>
+            	</tr>
+            	<tr>
+            		<td><code>is_single( array( 17, 'beef-stew', 'Irish Stew' ) ) </code></td>
+            		<td>Returns true when the single post being displayed is either <em>post ID</em> 17, or the <em>post_name</em> is "beef-stew", or the <em>post_title</em> is "Irish Stew".</td>
+            	</tr>
+            	<tr>
+            		<td><code>is_page()</code></td>
+            		<td><em>(string)</em> When any Page is being displayed.</td>
+            	</tr>
+            	<tr>
+            		<td><code>is_page( 42, 'about-me', 'About Me And Joe' ) </code></td>
+            		<td>Returns true when the Pages displayed is either <em>post ID </em>= 42, or <em>post_name</em> is "about-me", or <em>post_title</em> is "About Me And Joe".</td>
+            	</tr>
+            </tbody>
+          </table>
+          <h4>PHP Snippet</h4>
+          <p>This is an pretty standard if/else statement. <span class="label label-inverse">Line 1</span> it's saying (<code>if</code>) this is the home page, and opens an area between line 1 and line 2 to do a specific set of HTML/CSS/PHP;  on <span class="label label-inverse">Line 2</span> says if this is not the home page, (<code>else</code>), display this HTML/CSS/PHP instead.</p>
+          <pre class="prettyprint linenums">
+&lt;?php if (is_front_page()) { ?>
+&lt;?php } else { ?>
+&lt;?php } ?>
+</pre>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #conditionals .clearfix-->
+
+ 		<!-- Start #dynamic-navigations -->
+
+      <section id="dynamic-navigations" class="clearfix">
+        <div class="page-header">
+          <h1>Dynamic Navigations <small>Using WordPress's Menu system</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>WordPress has a built in Menu system within the CMS which we take advantage of. This allows people to create, move, add to existing Menu's.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h4>Most Common Parameters &amp; Values</h4>
+          <table class="table table-bordered table-striped">
+          	<thead>
+              <tr>
+                <th>Parameters</th>
+          			<th>Values</th>
+          		</tr>
+          	</thead>
+            <tbody>
+            	<tr>
+            		<td><code>theme_location</code></td>
+            		<td><em>(string)</em> <em>(optional)</em> the location in the theme to be used--must be registered with register_nav_menu() in order to be selectable by the user</td>
+            	</tr>
+            	<tr>
+            		<td><code>container</code></td>
+            		<td><em>(string)</em> <em>(optional)</em> Whether to wrap the ul, and what to wrap it with. Allowed tags are div and nav. Use false for no container e.g. <code>container => false</code></td>
+            	</tr>
+            	<tr>
+            		<td><code>items_wrap</code></td>
+            		<td><em>(string)</em> <em>(optional)</em> Whatever to wrap the items with an ul, and how to wrap them with</td>
+            	</tr>
+            </tbody>
+          </table>
+          <h4>PHP Snippets</h4>
+          <p>There are three registered Menu's in all of our sites. Therefore here are the three snippets for each.</p>
+          <h5>Main Navigation</h5>
+          <pre class="prettyprint linenums">
+&lt;?php
+  wp_nav_menu(
+    array(
+      'theme_location' => 'main-nav',
+      'container' => 'ul'
+    )
+  );
+?>
+</pre>
+          <h5>Footer Navigation</h5>
+          <pre class="prettyprint linenums">
+&lt;?php
+  wp_nav_menu(
+    array(
+      'theme_location' => 'footer-nav',
+      'container' => 'ul'
+    )
+  );
+?>
+</pre>
+          <h5>Areas of Practice Navigation</h5>
+          <pre class="prettyprint linenums">
+&lt;?php
+  wp_nav_menu(
+    array(
+      'theme_location' => 'aop-nav',
+      'container' => 'ul'
+    )
+  );
+?>
+</pre>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #dynamic-navigations .clearfix-->
+
+ 		<!-- Start #random-image-banner -->
+
+      <section id="random-image-banner" class="clearfix">
+        <div class="page-header">
+          <h1>Random Images <small>snippet for random image banners</small></h1>
+        </div>
+        <div class="grid-4 alpha">
+          <h3>About</h3>
+          <p>This snippet will make for a random image from a set of images.</p>
+        </div><!-- END .grid-4 alpha -->
+        <div class="grid-8 omega">
+          <h4>Naming &amp; Theory</h4>
+          <p>Make sure you follow our <a href="how-to-use.html#what-where-why">naming conventions</a>. This snippet is an example for the home page, so if you are using it on the an inner page change the <code>alt</code> tags. Also be sure to change the file name from <code>home-banner-</code> etc. to the proper name and file extension. This randomizes a set of numbers. So if you have <code>rand(1,4)</code> it will randomize 01, 02, 03, 04. Make sure you go two numbers deep on your naming for banner images just in case later on down the road the client adds banners we're all set. </p>
+          <h4>Most Common Parameters &amp; Values</h4>
+          <table class="table table-bordered table-striped">
+          	<thead>
+              <tr>
+                <th>Parameters</th>
+          			<th>Values</th>
+          		</tr>
+          	</thead>
+            <tbody>
+            	<tr>
+            		<td><code>rand()</code></td>
+            		<td><em>(1,4)</em> use this for the number of images you have, it's he range.</td>
+            	</tr>
+            </tbody>
+          </table>
+          <h4>PHP Snippets</h4>
+          <p>There are three registered Menu's in all of our sites. Therefore here are the three snippets for each.</p>
+          <h5>Main Navigation</h5>
+          <pre class="prettyprint linenums">
+&lt;?php $imgs = str_pad( (string) rand(1,4) , 2 , '0' , STR_PAD_LEFT ); ?>            
+  &lt;img src="&lt;?php echo get_stylesheet_directory_uri();?>/img/home-banner-&lt;?=$imgs?>.jpg" alt="Home Banner Photo" />
+</pre>
+        </div><!-- END .grid-8 .omega -->
+      </section><!-- END #random-image-banner .clearfix-->
+  
+    </article><!-- END .grid-12 -->
+  </div><!-- END .container-12 -->
+</section>
+      
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
