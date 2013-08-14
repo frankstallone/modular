@@ -16,6 +16,7 @@ What you'll find:
 The Ebb & Flow page is a high level overview, and the Index is a sitemap. Some links go to our internal MediaWiki which will not work outside of our network. 
 
 Someday Maybe List:
+-------------------
 
-[ ] Create Kitchen Sink File
-[ ] Breakdown Templates
+* Create Kitchen Sink File
+* Breakdown Templates
